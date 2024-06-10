@@ -9,17 +9,47 @@ var countdownNumber = 10;
 
  	if (state == 2) {
 
- 		timer = setInterval (function(){
+ 			timer = setInterval (function(){
  			document.getElementById('countdowm').innerHTML = countdownNumber;
 
  			countdownNumber = countdownNumber - 1;
 
- 			if (countdownNumber <=0) {
+ 			document.getElementById('countdowm').innerHTML = countdownNumber;
+
+ 			if (countdownNumber >4 && countdownNumber<=7 ){
+
+ 				//be nervouis 
+
+
+ 				document.getElementById('nervous').className = 'nervous show';
+
+ 			}
+ 			else {
+
+ 				document.getElementById('nervous').className = 'nervous';
+ 				
+ 			}
+
+			if (countdownNumber >1 && countdownNumber<=4){
+
+ 				//cant wait  
+ 				document.getElementById('cant-wait').className = 'cant-wait show';
+ 				
+ 			}
+ 			else {
+
+ 				document.getElementById('cant-wait').className = 'cant-wait';
+
+ 			}
+
+ 			if (countdownNumber <= 0 ) {
  				
  				changeState(3);
 
 
- 			};
+ 			}
+
+
 
  		}, 500 ); }
 
@@ -31,7 +61,7 @@ var countdownNumber = 10;
 
  				console.log('randomNumber ' , randomNumber)
 
- 				if (randomNumber > 5) {
+ 				if (randomNumber > 2) {
 
  					// do something
  					changeState(4);
